@@ -6,7 +6,8 @@ This is a plugin, it doesn't do anything by itself.
 
 ## Installation
 
-Install in the `plugins/` directory. Pretty straightforward, tbh.
+1. Set up a working instance of the <a href="https://github.com/V3XATI0N/php-app-framework">php-app-framework</a>
+2. Install this plugin in the `/plugins/` directory
 
 ## Configuration
 
