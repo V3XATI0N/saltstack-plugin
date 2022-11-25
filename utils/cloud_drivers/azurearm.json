@@ -1,0 +1,31 @@
+{
+    "driver": "azurearm",
+    "instance_icon": "/resource/plugins/salt/assets/minion_platform_virtualpc.png",
+    "state_field": "state",
+    "online_value": "Succeeded",
+    "id_field": "id",
+    "name_field": "__id__",
+    "tag_items": [
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_size.png",
+            "items": {
+                "Instance Size": "size"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_inspect.png",
+            "items": {
+                "Image Name": "image",
+                "Resource Group": "resource_group",
+                "Location": "location"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/minion_hw_lan.png",
+            "items": {
+                "Public IPs": "public_ips",
+                "Private IPs": "private_ips"
+            }
+        }
+    ]
+}

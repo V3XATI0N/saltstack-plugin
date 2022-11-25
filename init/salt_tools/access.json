@@ -1,0 +1,13 @@
+{
+  "methods": {
+    "GET": "moderator:user"
+  },
+  "skip_template": false,
+  "html_meta": {
+    "title": "SaltStack Infrastructure Tools",
+    "image": "\/resource\/plugins\/salt\/assets\/logo.png",
+    "description": "SaltStack Infrastructure Console - Infrastructure Tools",
+    "url": "%APP_URL%/tools"
+  },
+  "page_title": "Infrastructure Tools"
+}

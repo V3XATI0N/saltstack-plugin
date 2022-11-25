@@ -1,0 +1,32 @@
+{
+    "driver": "vmware",
+    "instance_icon": "/resource/plugins/salt/assets/cloud_vmware.png",
+    "state_field": "state",
+    "online_value": "poweredOn",
+    "name_field": "id",
+    "id_field": "id",
+    "hash_id": true,
+    "tag_items": [
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_size.png",
+            "items": {
+                "Instance Size": "size",
+                "Image Name": "image"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_inspect.png",
+            "items": {
+                "VMWare Tools Status": "tools_status",
+                "Guest ID": "guest_id"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/minion_hw_lan.png",
+            "online_only": true,
+            "items": {
+                "Networks": "networks"
+            }
+        }
+    ]
+}

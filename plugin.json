@@ -1,0 +1,116 @@
+{
+    "name": "Salt Console",
+    "description": "Salt API Console",
+    "maintainer": "Big Tex's Shitty Code and Massage Emporium",
+    "version": "0.12.0",
+    "depends": {
+        "core": "4.99.78"
+    },
+    "logo_image": "\/resource\/plugins\/salt\/assets\/logo.png",
+    "enabled": true,
+    "includes": [
+        "\/utils\/functions.php",
+        "\/utils\/classes.php"
+    ],
+    "auth_provider": "\/utils\/salt_auth.php",
+    "group_model_extensions": {
+        "fileds": [
+            {
+                "name": "salt_default_api_group",
+                "display": "Salt API Group",
+                "type": "bool",
+                "required": true
+            }
+        ]
+    },
+    "scripts": [
+        {
+            "source": "\/resource\/salt.js",
+            "access": "user:user"
+        },
+        {
+            "source": "\/resource\/salt_cloud.js",
+            "access": "user:user"
+        }
+    ],
+    "styles": [
+        {
+            "source": "\/resource\/salt.css",
+            "access": "public:public"
+        }
+    ],
+    "api": {
+        "cloud": {
+            "access": {
+                "OPTIONS": "user:user",
+                "GET": "user:user",
+                "POST": "moderator:user",
+                "PATCH": "moderator:user",
+                "DELETE": "moderator:admin"
+            }
+        },
+        "console": {
+            "access": {
+                "OPTIONS": "user:user",
+                "GET": "user:user",
+                "POST": "user:admin"
+            }
+        },
+        "minions": {
+            "access": {
+                "OPTIONS": "user:user",
+                "GET": "user:user",
+                "POST": "user:user",
+                "PATCH": "user:user",
+                "DELETE": "user:user"
+            }
+        },
+        "salt": {
+            "access": {
+                "GET": "user:user",
+                "POST": "user:moderator"
+            }
+        }
+    },
+    "account_settings_modules": [
+        {
+            "access": "user:user",
+            "href": "salt_settings",
+            "name": "Salt Settings",
+            "icon": "logo.png"
+        }
+    ],
+    "release_trigger": 2,
+    "nav_menu": {
+        "Minions": {
+            "href": "\/minions",
+            "access": "user:user",
+            "menu_id": "__salt_minions",
+            "icon": "\/resource\/plugins\/salt\/assets\/minion_list.png"
+        },
+        "Tools": {
+            "href": "\/salt_tools",
+            "access": "moderator:user",
+            "menu_id": "__salt_tools",
+            "icon": "\/resource\/plugins\/salt\/assets\/salt_tools.png"
+        },
+        "Pillar": {
+            "href": "\/pillar",
+            "access": "admin:user",
+            "menu_id": "__salt_pillar",
+            "icon": "\/resource\/plugins\/salt\/assets\/pillar.png"
+        },
+        "States": {
+            "href": "\/states",
+            "access": "user:moderator",
+            "menu_id": "__salt_states",
+            "icon": "\/resource\/plugins\/salt\/assets\/states.png"
+        },
+        "Cloud": {
+            "href": "\/salt_cloud",
+            "access": "user:admin",
+            "menu_id": "__salt_cloud",
+            "icon": "\/resource\/plugins\/salt\/assets\/cloud.png"
+        }
+    }
+}

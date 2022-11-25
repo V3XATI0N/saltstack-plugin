@@ -1,0 +1,9 @@
+[
+    {
+        "id": "saltadmin01",
+        "name": "Salt PKI Keys",
+        "module": "plugin/salt/pki",
+        "access": "user:moderator",
+        "icon": "/resource/plugins/salt/assets/minion_salt.png"
+    }
+]

@@ -1,0 +1,14 @@
+{
+  "methods": {
+    "GET": "user:user",
+    "POST": "user:admin"
+  },
+  "skip_template": false,
+  "html_meta": {
+    "title": "Manage Salt States",
+    "image": "\/resource\/plugins\/salt\/assets\/logo.png",
+    "description": "SaltStack Infrastructure Console - State Manager",
+    "url": "%APP_URL%/states"
+  },
+  "page_title": "%API_PATH%"
+}

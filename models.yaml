@@ -1,0 +1,128 @@
+---
+append:
+- model: admin_modules
+  store: /utils/admin_modules.json
+models:
+- name: minion_type
+  humanname: Minion Type
+  store: /utils/minion_types.json
+  admin_manage: true
+  access:
+    OPTIONS: 'user:user'
+    GET: 'user:user'
+    POST: 'admin:user'
+    PATCH: 'admin:user'
+    DELETE: 'admin:user'
+  fields:
+  - name: name
+    display: Name
+    required: true
+    type: str
+  - name: size
+    display: Size
+    required: true
+    type: str
+- name: minion_shell_quick_command
+  humanname: Minion Shell Quick Command
+  store: /utils/quickcommands.json
+  admin_manage: true
+  access:
+    OPTIONS: 'user:user'
+    GET: 'user:user'
+    POST: 'admin:user'
+    PATCH: 'admmin:user'
+    DELETE: 'admin:user'
+  fields:
+  - name: label
+    display: Label
+    required: true
+    type: str
+    label: true
+  - name: cmd
+    display: Command
+    required: true
+    type: str
+  - name: async
+    display: Asynchronous
+    required: false
+    type: bool
+  - name: bg
+    display: Background
+    required: false
+    type: bool
+  - name: user
+    display: Run as user
+    required: false
+    type: str
+  - name: shell
+    display: Command Shell
+    required: false
+    default: /bin/bash
+    type: option
+    options:
+    - /bin/bash
+    - /bin/sh
+    - /usr/bin/zsh
+    - /usr/bin/fish
+    - cmd
+    - powershell
+  - name: exclude_kernels
+    display: Excluse OS
+    required: false
+    type: multi
+    name_field: __key__
+    id_field: __val__
+    options:
+      Windows: Windows
+      Linux: Linux
+      Mac OS: Darwin
+      Solaris: SunOS
+      BSD: BSD
+- name: minion
+  humanname: Salt Minion
+  store: __controller__
+  admin_manage: false
+  access:
+    OPTIONS: "user:user"
+    GET: "moderator:user"
+    POST: "admin:user"
+    DELETE: "admin:admin"
+  fields:
+  - name: id
+    display: Minion ID
+    type: str
+    required: true
+    label: true
+  - name: grains
+    display: Minion Grains
+    type: str
+    required: true
+- name: minion_pki_key
+  humanname: Minion PKI Key
+  store: __controller__
+  admin_manage: false
+  access:
+    OPTIONS: "user:user"
+    GET: "moderator:user"
+    POST: "admin:user"
+    DELETE: "admin:admin"
+    PURGE: "admin:admin"
+  fields:
+  - name: id
+    display: Key ID
+    required: true
+    type: str
+    label: true
+  - name: key
+    display: Public Key Data
+    required: false
+    type: str
+  - name: state
+    display: Key State
+    required: true
+    type: select
+    options:
+    - accepted
+    - rejected
+    - denied
+    - pending

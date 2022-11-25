@@ -1,0 +1,14 @@
+{
+    "methods": {
+      "GET": "user:user",
+      "POST": "user:moderator"
+    },
+    "skip_template": false,
+    "html_meta": {
+      "title": "Manage Salt-Cloud",
+      "image": "\/resource\/plugins\/salt\/assets\/logo.png",
+      "description": "SaltStack Infrastructure Console - Cloud Manager",
+      "url": "%APP_URL%/cloud"
+    },
+    "page_title": "Cloud Tools"
+}

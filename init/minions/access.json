@@ -1,0 +1,14 @@
+{
+  "methods": {
+    "GET": "user:user",
+    "POST": "user:moderator"
+  },
+  "html_meta": {
+    "title": "Manage Salt Minions",
+    "image": "\/resource\/plugins\/salt\/assets\/logo.png",
+    "description": "SaltStack Infrastructure Console - Minion Manager",
+    "url": "%APP_URL%/minions"
+  },
+  "page_title": "Minions %API_PATH%",
+  "skip_template": false
+}

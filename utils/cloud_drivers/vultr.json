@@ -1,0 +1,25 @@
+{
+    "driver": "vultr",
+    "instance_icon": "/resource/plugins/salt/assets/cloud_vultr.png",
+    "state_field": "state",
+    "online_value": "active",
+    "id_field": "id",
+    "name_field": "label",
+    "size_field": "size",
+    "tag_items": [
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_size.png",
+            "items": {
+                "Instance Size": "size",
+                "Image Name": "image"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/minion_hw_lan.png",
+            "items": {
+                "Main IP": "main_ip",
+                "Allowed Bandwidth (GB)": "allowed_bandwidth_gb"
+            }
+        }
+    ]
+}

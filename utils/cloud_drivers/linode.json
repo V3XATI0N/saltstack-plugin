@@ -1,0 +1,31 @@
+{
+    "driver": "linode",
+    "instance_icon": "/resource/plugins/salt/assets/cloud_linode.png",
+    "state_field": "state",
+    "online_value": "Running",
+    "id_field": "id",
+    "name_field": "__id__",
+    "tag_items": [
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_size.png",
+            "items": {
+                "Instance Size": "size"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/cloud_inspect.png",
+            "items": {
+                "Image Name": "image",
+                "Total RAM": "extra:TOTALRAM",
+                "Created": "extra:CREATE_DT",
+                "Distribution Vendor": "extra:DISTRIBUTIONVENDOR"
+            }
+        },
+        {
+            "icon": "/resource/plugins/salt/assets/minion_hw_lan.png",
+            "items": {
+                "Public IPs": "public_ips"
+            }
+        }
+    ]
+}

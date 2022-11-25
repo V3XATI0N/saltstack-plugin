@@ -1,0 +1,179 @@
+{
+    "status_items": [
+        {
+            "label": "Operating System",
+            "grains": [
+                "os",
+                "osrelease",
+                "kernel"
+            ]
+        },
+        {
+            "label": "Hardware",
+            "grains": [
+                "virtual",
+                "productname",
+                "manufacturer"
+            ]
+        },
+        {
+            "label": "CPU",
+            "grains": [
+                "cpu_model",
+                "cpuarch",
+                "num_cpus"
+            ]
+        },
+        {
+            "label": "Memory",
+            "grains": [
+                "mem_total"
+            ],
+            "append": "MB"
+        },
+        {
+            "label": "IPv4 Addresses",
+            "list": true,
+            "grains": [
+                "ipv4"
+            ]
+        },
+        {
+            "label": "IPv6 Addresses",
+            "list": true,
+            "grains": [
+                "ipv6"
+            ]
+        },
+        {
+            "label": "Minion Version",
+            "grains": [
+                "saltversion"
+            ]
+        }
+    ],
+    "minion_list_multi_commands": [
+        {
+            "label": "Basic Functions",
+            "name": "basic_funcs",
+            "inputs": [
+                {
+                    "type": "button",
+                    "label": "Clear Cache",
+                    "name": "clear_cache",
+                    "fun": "saltutil.clear_cache"
+                },
+                {
+                    "type": "button",
+                    "label": "Ping",
+                    "name": "ping",
+                    "fun": "test.ping"
+                },
+                {
+                    "type": "button",
+                    "label": "Sync All",
+                    "name": "sync_all",
+                    "fun": "saltutil.sync_all"
+                },
+                {
+                    "type": "button",
+                    "label": "Sync Grains",
+                    "name": "sync_grains",
+                    "fun": "saltutil.sync_grains"
+                }
+            ]
+        },
+        {
+            "label": "Run Command",
+            "name": "run_command",
+            "inputs": [
+                {
+                    "type": "string",
+                    "label": "Command...",
+                    "name": "cmd_run",
+                    "fun": "cmd.run",
+                    "kwarg_name": "cmd"
+                }
+            ]
+        }
+    ],
+    "minion_modules": [
+        {
+            "label": "Users",
+            "icon": "/resource/plugins/salt/assets/minion_users.png",
+            "href": "users",
+            "path": "/init/minions/users",
+            "online_only": true
+        },
+        {
+            "label": "Groups",
+            "icon": "/resource/plugins/salt/assets/minion_groups.png",
+            "href": "groups",
+            "path": "/init/minions/groups",
+            "online_only": true
+        },
+        {
+            "label": "Services",
+            "icon": "/resource/plugins/salt/assets/minion_services.png",
+            "href": "services",
+            "path": "/init/minions/services",
+            "online_only": true
+        },
+        {
+            "label": "Disks",
+            "icon": "/resource/plugins/salt/assets/minion_disks.png",
+            "href": "disks",
+            "path": "/init/minions/disks",
+            "online_only": true
+        },
+        {
+            "label": "Shell",
+            "icon": "/resource/plugins/salt/assets/minion_shell.png",
+            "href": "shell",
+            "path": "/init/minions/shell",
+            "online_only": true
+        },
+        {
+            "label": "Tasks",
+            "icon": "/resource/plugins/salt/assets/minion_tasks.png",
+            "href": "tasks",
+            "path": "/init/minions/tasks",
+            "online_only": true
+        },
+        {
+            "label": "Updates",
+            "icon": "/resource/plugins/salt/assets/minion_update.png",
+            "href": "updates",
+            "path": "/init/minions/updates",
+            "online_only": true
+        },
+        {
+            "label": "DELETE",
+            "icon": "/resource/red_x.png",
+            "href": "delete",
+            "path": "/init/minions/delete",
+            "offline_only": true
+        }
+    ],
+    "quick_commands": [
+        {
+            "label": "Show Local Grains",
+            "cmd": "salt-call --local grains.items"
+        },
+        {
+            "label": "Reboot",
+            "cmd": "salt-call --local system.restart",
+            "bg": true,
+            "async": true
+        },
+        {
+            "label": "Show Pillar Data",
+            "cmd": "salt-call pillar.items"
+        },
+        {
+            "label": "Run Highstate",
+            "cmd": "salt-call state.apply",
+            "async": true
+        }
+    ]
+}

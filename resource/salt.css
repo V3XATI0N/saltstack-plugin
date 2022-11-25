@@ -1,0 +1,616 @@
+.salt_pkiKeyItemData {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    padding: 6px;
+    color: black;
+    font-size: 10pt;
+    font-family: var(--default_monospace_font);
+    white-space: pre-wrap;
+}
+.hide_til_load {
+    display: none;
+}
+#salt_waitBlock {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+#salt_waitBlockNote {
+    color: white;
+    text-align: center;
+    position: absolute;
+    font-size: 18pt;
+    background: rgba(0, 225, 0, 0.3);
+    padding: 32px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30%;
+}
+.salt_statLabel {
+    display: block;
+    margin: 2px;
+    padding: 6px;
+    font-size: 10pt;
+    width: 20%;
+    text-align: center;
+    border-radius: 3px;
+    font-family: var(--default_variable_font);
+    box-sizing: border-box;
+    background: var(--themeColor);
+    color: var(--textOnTheme);
+}
+.objectList .objectItem.salt_minionInfoBlock {
+    align-items: stretch;
+}
+.salt_statValue {
+    display: inline-block;
+    margin: 2px;
+    padding: 4px;
+    vertical-align: middle;
+    font-size: 10pt;
+    width: 75%;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: var(--default_variable_font);
+    white-space: pre-wrap;
+    word-break: break-all;
+    user-select: text;
+}
+.salt_gridTop {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+}
+.salt_gridItem {
+    display: inline-block;
+    width: calc((100% / 3) - 8px);
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 12pt;
+    background: var(--itemBgColor);
+    border-radius: 3px;
+    margin: 4px;
+}
+.salt_gridItemIcon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.salt_minionModBox .salt_gridItemLabel {
+    color: var(--textOnItemBgColor);
+}
+a.salt_minionModBox:hover {
+    cursor: pointer;
+    background: var(--objectHover);
+}
+a.salt_minionModBox:hover .salt_gridItemLabel {
+    color: var(--textOnObjectHover);
+    cursor: pointer;
+}
+.salt_pageBlock {
+    display: flex;
+    align-items: stretch;
+    height: calc(100vh - 56px);
+}
+.salt_pageBlockItem {
+    flex-grow: 1;
+}
+.salt_pageBlock .salt_pageBlockItem.one-third {
+    width: calc((100% / 3));
+}
+.salt_pageBlock .salt_pageBlockItem.two-thirds {
+    width: calc((100% / 3) * 2);
+}
+.salt_pageBlockItem {
+    padding: 4px;
+}
+.salt_pageBlockItem no-padding {
+    padding: 0;
+}
+.salt_pageBlockItem .adminContentCatch {
+    padding: 0;
+}
+.salt_preWrap {
+    white-space: pre-wrap;
+    word-wrap: anywhere;
+    word-break: break-all;
+    user-select: text;
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--textOnGreyLighter2);
+    padding: 4px;
+    margin: 4px;
+    border-radius: 3px;
+}
+.salt_infoNotice {
+    text-align: center;
+    font-size: 12pt;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 3px;
+    background: var(--bodyBgColor);
+    color: var(--themeColor);
+    border: 1px solid var(--themeColor);
+}
+.salt_infoNotice.error {
+    border: 1px solid red;
+}
+.salt_sectionTitle {
+    text-align: center;
+    margin: 4px;
+    padding: 4px;
+    font-weight: normal;
+    color: var(--textOnTheme);
+    background: var(--themeColor);
+    border-radius: 3px;
+}
+.salt_sectionTools {
+    background: var(--itemBgColor);
+    text: var(--textOnItemBgColor);
+    margin: 4px;
+    margin-top: -4px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+/* updates */
+#minion_update_tools {
+    text-align: right;
+}
+
+/* shell */
+#salt_minionShelltop {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 48px);
+}
+#salt_minionShellBuffer {
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: block;
+    background: black;
+    color: white;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 3px 3px 0px 0px;
+    height: calc(100vh - 154px);
+    box-sizing: border-box;
+    font-size: 10pt;
+    font-family: var(--default_monospace_font);
+    overflow: hidden;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+#salt_minionShellInputTools {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4px;
+    margin-top: -4px;
+    font-size: 0;
+}
+#salt_minionShellInputTools input[type="text"] {
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 0;
+    margin-left: 4px;
+    background: rgba(25, 25, 25, 1);
+    color: white;
+    border: none;
+    border-radius: 0px 0px 0px 3px;
+    width: calc(100% - 96px);
+    height: 36px;
+    font-family: var(--default_monospace_font);
+}
+#salt_minionShellInputTools button {
+    margin: 0;
+    margin-right: 4px;
+    width: 88px;
+    border-radius: 0px 0px 3px 0px;
+    height: 36px;
+    outline: none;
+}
+#salt_minionShellTools {
+    margin: 4px;
+    border-radius: 3px;
+    font-size: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-x: auto;
+    background: var(--greyLighter);
+    color: var(--textOnGreyLighter);
+}
+#salt_minionShellTools label {
+    font-size: 10pt;
+    padding: 4px;
+    flex-shrink: 0;;
+}
+#salt_minionShellTools input,
+#salt_minionShellTools select {
+    background: var(--textOnGreyDarker);
+    color: var(--greyDarker);
+    font-size: 10pt;
+    padding: 4px;
+}
+#salt_minionList_blockLeft {
+    width: 100%;
+}
+#salt_minionList_blockRight {
+    display: none;
+    flex-shrink: 0;
+    max-height: calc(100vh - 48px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+.salt_minionMultiFormCommandAction {
+    max-height: none;
+}
+.salt_minionResultName {
+    display: inline-block;
+    width: 50%;
+    font-size: 10pt;
+    padding: 4px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 2px;
+    background: rgba(0, 0, 0, 0.15);
+}
+.salt_minionResultValue {
+    display: inline-block;
+    font-size: 9pt;
+    font-family: var(--default_monospace_font);
+    vertical-align: middle;
+    margin-left: 8px;
+}
+.salt_minionResultValue.shellResult {
+    color: white;
+    background: black;
+    padding: 4px;
+    white-space: pre-wrap;
+    width: 100%;
+    display: block;
+    margin: 2px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    overflow: hidden;
+    overflow-x: auto;
+}
+.salt_minionResultValue.returnError {
+    outline: 2px solid red;
+    color: red;
+}
+.salt_minionResultValue.greenText {
+    color: green;
+}
+.salt_checkJobStatus {
+    border-radius: 3px;
+    margin: 2px;
+    padding: 4px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.45);
+    font-family: var(--default_monospace_font);
+    border: 1px solid var(--themeColor);
+}
+.salt_checkJobStatus:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.75);
+}
+.salt_checkJobStatus.inline {
+    display: inline-block;
+}
+.salt_minionMultiFormCommandLabel {
+    font-size: 10pt;
+    padding: 4px;
+    margin: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+.salt_minionShellCmdLine {
+    color: #ccc;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 2px;
+    padding: 4px;
+    margin-bottom: 0;
+    border-radius: 3px 3px 0px 0px;
+}
+.salt_minionShellResponse {
+    box-sizing: border-box;
+    margin: 2px;
+    margin-top: 0;
+    padding: 4px;
+    background: black;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0px 0px 3px 3px;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.salt_minionListIconTag {
+    opacity: 0.55;
+}
+.salt_minionListIconTag:hover {
+    opacity: 1;
+}
+.salt_minionMultiFormButtonCommand {
+    font-size: 10pt;
+    padding: 4px;
+}
+#salt_userSettings_submit {
+    display: none;
+}
+.salt_minionTasks_timeInput {
+    /*width: 20%;
+    text-align: center;
+    font-size: 10pt;
+    box-sizing: border-box;
+    padding: 4px;*/
+    overflow: hidden;
+}
+input.salt_minionTasks_fieldInput[type="text"] {
+    background: white !important;
+    outline: none !important;
+    border: 1px solid var(--themeLighter) !important;
+    text-align: center;
+    width: 20% !important;
+}
+input.salt_minionTasks_fieldInput[field="comment"] {
+    text-align: left;
+}
+.salt_minionTasks_fieldInput[field="cmd"] {
+    font-family: var(--default_monospace_font);
+}
+.salt_minionTasks_preItem {
+    font-family: var(--default_monospace_font);
+    user-select: text;
+}
+#salt_jidCheck_results {
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: var(--default_monospace_font);
+    border-radius: 4px;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+#salt_deleteMinion {
+    background: #e80000;
+    color: white;
+}
+.salt_objectItemTagSpan {
+    position: relative;
+    font-weight: normal;
+    font-style: normal;
+    border-radius: 3px;
+    padding: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 9pt;
+    margin: 4px;
+    display: inline-block;
+    border: 1px solid var(--themeColor);
+    color: var(--themeColor);
+    background: var(--themeGrey);
+}
+.salt_objectItemTagSpan_subTag {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: -1px;
+    width: auto;
+    min-width: calc(100% + 2px);
+    box-sizing: border-box;
+    flex-direction: column;
+    background: var(--greyLighter2);
+    color: var(--textOnGreyLighter2);
+    border-radius: 3px;
+    padding: 4px;
+    box-shadow: 0px 2px 8px -4px rgba(0,0,0,0.4);
+    border: 1px solid #00000033;
+    z-index: 10;
+    word-wrap: normal;
+    text-align: left;
+    justify-content: center;
+    -webkit-transition: 0.25s all ease-in-out;
+	-moz-transition: 0.25s all ease-in-out;
+	-o-transition: 0.25s all ease-in-out;
+	transition: 0.25s all ease-in-out;
+}
+.salt_objectItemTagSpan_subTagItem {
+    display: inline-block;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 3px;
+    color: var(--textOnGreyLighter);
+    font-size: 9pt;
+    white-space: pre;
+}
+.salt_subTagLabel {
+    font-weight: bolder;
+    font-family: var(--default_variable_font);
+    font-style: normal;
+}
+.salt_subTagValue {
+    font-weight: normal;
+    font-size: 9pt;
+    font-family: var(--default_monospace_font);
+    font-style: normal;
+}
+.salt_minionStatusIcon {
+    margin: 4px;
+    height: 18px;
+    width: 18px;
+    border-radius: 200px;
+    font-size: 0;
+    border: 1px solid var(--themeColor);
+}
+.salt_minionStatusIcon .loading_place {
+    width: 32px;
+}
+.salt_minionStatusIcon img {
+    margin: -4px;
+}
+/*
+.salt_minionItem {
+    border: 1px solid transparent;
+}
+*/
+.salt_minionItem:hover {
+    cursor: pointer;
+    border: 1px solid var(--themeColor);
+}
+.objectList .objectItem.salt_minionItem .objectItemLabel.salt_minionItemLabel:hover {
+    background: none !important;
+}
+.salt_minionItemLabel {
+    max-width: none !important;
+    flex-direction: row !important;
+}
+.salt_minionItemLabelText {
+    display: inline-flex;
+    align-items: center;
+    /*font-size: 14pt;*/
+    padding: 2px;
+    color: var(--themeColorText);
+    width: 100%;
+}
+.salt_minionItemLabelTags {
+    flex-wrap: nowrap !important;
+}
+.objectItemLabel:hover .salt_minionItemLabelText {
+    color: var(--themeColor);
+}
+.salt_minionItemLabelTextIcon,
+.salt_objectItemTagSpanImg {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin: 3px;
+    padding: 2px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    /*
+    border: 1px solid var(--themeColor);
+    background: var(--themeLighter2);
+    */
+    background: var(--greyLighter2);
+}
+.salt_objectItemTagSpanImg img {
+    height: 16px;
+    margin: 0;
+    padding: 0;
+}
+.salt_objectItemTagSpan:hover .salt_objectItemTagSpan_subTag,
+.salt_objectItemTagSpanImg:hover .salt_objectItemTagSpan_subTag {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
+
+/* cloud */
+#salt_cloud_content_main {
+    height: calc(100vh - 8px);
+}
+.salt_cloud_instance_data {
+    font-size: 10pt;
+    font-family: var(--default_monospace_font);
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* disks */
+.salt_diskItem {
+    position: relative;
+    font-weight: bold;
+    font-size: 10pt !important;
+    font-family: var(--default_monospace_font);
+    border: 1px solid var(--themeColor);
+}
+.salt_diskItem .salt_diskItemUsageMeter {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 0;
+    background: black;
+    opacity: 20%;
+    border-radius: 2px 0px 0px 2px;
+    z-index: 9;
+}
+.salt_sectionTitle .loading_place {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+.salt_sectionTitle img {
+    vertical-align: middle;
+    height: 28px;
+    background: var(--greyLighter2);
+    padding: 2px;
+    border-radius: 3px;
+    margin:2px;
+    margin-right: 8px;
+}
+.salt_sectionTitle .salt_sectionSubTitle {
+    font-size: 10pt;
+}
+.salt_diskItem.activePage {
+    background: rgba(128, 128, 128, 0.4) !important;
+    color: var(--textOnBodyBgColor) !important;
+}
+.salt_minionNotice {
+    margin: 4px;
+    padding: 4px;
+    font-size: 12pt;
+    background: var(--themeColor);
+    color: var(--textOnTheme);
+    border-radius: 3px;
+    border: 1px solid black;
+    width: 100%;
+    box-sizing: border-box;
+}
+.salt_minionNotice img {
+    height: 24px;
+    margin-right: 4px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+}
+.salt_minionNotice a:link,
+.salt_minionNotice a:visited {
+    color: var(--themeLighter2);
+}
+.salt_minionNotice a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .salt_gridTop .salt_gridItem {
+        width: 100%;
+    }
+    .salt_pageBlock {
+        flex-direction: column;
+    }
+    .salt_pageBlock .salt_pageBlockItem.one-third {
+        width: 100%;
+    }
+    .salt_pageBlock .salt_pageBlockItem.two-thirds {
+        width: 100%;
+    }
+    #salt_minionShellBuffer {
+        height: calc(100vh - 256px);
+    }
+    .salt_pkiKeyItemData {
+        font-size: 8pt;
+        word-break: break-all;
+    }
+}

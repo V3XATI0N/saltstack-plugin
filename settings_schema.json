@@ -1,0 +1,90 @@
+{
+   "groups": {
+      "salt": {
+         "name": "Salt Settings",
+         "access": "admin:admin"
+      },
+      "salt_api": {
+         "name": "Salt API Connection",
+         "access": "admin:admin"
+      }
+   },
+   "core": {
+      "salt_cloud_manager": {
+         "name": "Salt Cloud Manager",
+         "description": "Minion ID of the host that manages Salt-Cloud functions",
+         "type": "str",
+         "group": "salt",
+         "default": "cloudmgr"
+      },
+      "salt_api_per_user": {
+         "name": "Per-User API Connections",
+         "description": "Allow users to specify their own Salt API (no effect yet)",
+         "type": "bool",
+         "group": "salt_api",
+         "default": false
+      },
+      "salt_master_id": {
+         "name": "Salt Master ID",
+         "description": "Master node Salt ID",
+         "type": "str",
+         "group": "salt",
+         "default": "saltmaster.local"
+      },
+      "salt_ssl_verify": {
+         "name": "Verify API Certificate",
+         "description": "Require a valid, trusted certificate on Salt API",
+         "type": "bool",
+         "group": "salt_api",
+         "default": true
+      },
+      "salt_api_addr": {
+         "name": "Salt API Address",
+         "description": "Where to reach Salt API",
+         "type": "str",
+         "group": "salt_api",
+         "default": "https://where.the.heck"
+      },
+      "salt_api_port": {
+         "name": "Salt API Port",
+         "description": "The TCP port where the API is running",
+         "type": "int",
+         "group": "salt_api",
+         "default": 8000
+      },
+      "salt_api_user": {
+         "name": "Default Salt API User",
+         "description": "Username for basic API authentication",
+         "type": "str",
+         "group": "salt_api",
+         "default": "username"
+      },
+      "salt_api_pass": {
+         "name": "Default Salt API Password",
+         "description": "Password for basic API authentication",
+         "type": "password",
+         "group": "salt_api",
+         "default": "password"
+      },
+      "salt_api_auth": {
+         "name": "Salt API Auth",
+         "description": "Allow Salt API users to log in to the console",
+         "type": "bool",
+         "default": false,
+         "group": "salt_api",
+         "require": {
+            "allow_plugin_auth": {
+               "on": true,
+               "off": null
+            }
+         }
+      },
+      "salt_minion_shell_use_vt": {
+         "name": "Use \"Virtual Terminal\" in minion shell",
+         "description": "Enables color output for fancy-pance users. Does not allow interactive use. Some commands will timeout in an ugly way.",
+         "type": "bool",
+         "default": false,
+         "group": "salt"
+      }
+   }
+}

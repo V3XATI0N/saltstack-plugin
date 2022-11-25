@@ -1,0 +1,14 @@
+---
+changelog:
+- version: 0.1.1
+  date: 20210630
+  changes:
+  - type: change
+    context: models
+    change: define models in YAML (requires Core >= 4.99.51)
+  - type: new
+    context: classes
+    change: add placeholder functions for SaltCall() class
+  - type: new
+    context: models
+    change: add minion_pki_key model using Controller type
